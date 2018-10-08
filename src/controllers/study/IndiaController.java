@@ -1,0 +1,43 @@
+package controllers.study;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.google.gson.Gson;
+
+import models.IssueDao;
+
+@Controller
+@RequestMapping("/study")
+public class IndiaController {
+	public IndiaController() {
+		System.out.println("IndiaController created!");
+		System.out.println(gson==null);
+		JFrame r =  new JFrame();
+		
+	}
+	@Autowired	// Spring에 의해서 이 객체가 생성될때만 작동하게 된다.
+	Gson gson;
+	
+	@Autowired
+	JFrame frame1;
+
+	@RequestMapping("/21.do")
+	public void sutdy21Handle(@Autowired IssueDao idao) throws IOException {
+		System.out.println("in study21Handle..gson is null ?" + (gson==null));
+		List<Map> map = idao.getAllIssue();
+		System.out.println(gson.toJson(map));
+		for(int cnt=1; cnt<=6; cnt++) {
+			frame1.add(new JButton());
+		}
+		frame1.setVisible(true);
+	}
+}
