@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 
 @Service
 public class AlertService {
+	
 	List<WebSocketSession> list;
 	
 	@Autowired

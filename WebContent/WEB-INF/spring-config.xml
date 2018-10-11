@@ -18,10 +18,9 @@
 	<bean id="handlerMapping"
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
 	<!-- controller registration -->
-	<context:component-scan
-		base-package="controllers" />
-	<!-- <bean id="indexController" class="controllers.IndexController"/> 이 
-		Controller가 scan 대상에 포함이기 때문에 따로 등록안해도 된다. -->
+	<context:component-scan base-package="controllers" />
+	<!-- <bean id="indexController" class="controllers.IndexController"/> 
+		이 Controller가 scan 대상에 포함이기 때문에 따로 등록안해도 된다. -->
 	<!-- viewResolver configuration -->
 	<bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver" id="tilesViewResolver"/>
 	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
@@ -91,7 +90,7 @@
 	<!-- 
 		WebSocketHandler 등록 및 매핑
 		1. Namespaces에서 websocket 체크
-		2. mapping / handler 부분에는 WebSocketHandler를 extedns걸고 설계한
+		2. mapping / handler 부분에는 WebSocketHandler를 extends 걸고 설계한
 			웹 소켓 컨트롤러 객체의 id를 설정하면 됨 (ref 처리됨)
 			웹 소켓 처리용 객체는 bean을 수동으로 등록해서 이름을 줘도 되고,
 			comment-scan에 의해서 자동 둥록되는 객체들은,
@@ -101,6 +100,7 @@
 	<websocket:handlers>
 		<websocket:mapping handler="zuluController" path="/conn.do"/>
 	</websocket:handlers>
+	
 
 </beans>
 
