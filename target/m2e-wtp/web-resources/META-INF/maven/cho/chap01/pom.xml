@@ -28,12 +28,19 @@
 	</build>
 	<dependencies>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>5.1.0.RELEASE</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-el -->
-		 <dependency>
+		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-el</artifactId>
 			<version>3.0.8</version>
-		</dependency> 
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
@@ -45,7 +52,7 @@
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-servlet</artifactId>
 			<version>3.0.8</version>
-		</dependency> 
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
@@ -124,5 +131,9 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+
+	
 
 </project>

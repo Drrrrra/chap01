@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import models.AlertService;
+
 /*
  * Multipart 처리 (File upload)
  *  - Spring은 Multipart 요청도 처리하게 편하게 처리해서 요청처리 메서드에 Inject 해준다.
@@ -28,18 +30,24 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 @RequestMapping("/study")
 public class KiloController {
+	@Autowired
+	AlertService service;
 	
 	@Autowired
 	ServletContext ctx;
 	
 	@RequestMapping("/26.do")
 	public String study26Handle() {
-		return "upload";
+		String json ="{\"mode\":\"upload\"}";
+		service.sendAll(json);
+		return "p";
 	}
 	
 	@RequestMapping("/27.do")
 	public void study27Handle(@RequestParam String info, 
 			@RequestParam MultipartFile attach) throws IOException {
+		
+		
 		System.out.println("info = " + info );
 		System.out.println("attach = " + attach +"/ " + attach.isEmpty() );
 		// MultipartFile 객체는 첨부된 파일데이터가 없어도 생성된다, Empty 체크할것.
@@ -69,10 +77,30 @@ public class KiloController {
 	}
 	
 	@RequestMapping("/29.do")
-	public void study29Handle() {
+	public void study29Handle(@RequestParam MultipartFile[] attach) {
+		if(attach[0].isEmpty()) {
+			System.out.println("업로드된 파일 없다는 것");
+		}else {
+			System.out.println("업로드된 파일 개수 :" +attach.length);
+			for(int i=0; i<attach.length; i++) {
+				System.out.println("→ "+attach[i].getOriginalFilename());
+				// attach[i].transferTo();
+			}
+		}
 		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
