@@ -47,7 +47,7 @@ public class AlphaController {
 		webRequest.setAttribute("limit", 5, WebRequest.SCOPE_SESSION);
 	}
 	
-	// 3. Map,Model, ModelMap : 뷰로 넘어가게 됬을대 사용할 데이터들을 저장시키고자할때
+	// 3. Map,Model, ModelMap : 뷰로 넘어가게 됐을 때 사용할 데이터들을 저장시키고자할때
 	@RequestMapping("/03.do")
 	public String study03Handle(ModelMap modelMap) {
 		System.out.println("study03Handle..");

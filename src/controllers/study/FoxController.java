@@ -16,6 +16,7 @@ public class FoxController {
 	 */
 	@RequestMapping("/13.do")
 	public String study13Handle() {
+		
 		return "/WEB-INF/views/send.jsp";
 	}
 	@RequestMapping("/13ajax.do")

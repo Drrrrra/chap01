@@ -22,6 +22,7 @@ public class GolfController {
 		// 따로 뷰이름을 설정하지 않고, handle 종료를 시키면, 
 		// Spring이  "study/97"을 뷰이름으로 사용하게 된다.
 		// ViewResolver를 개조시키면, 알아서 뷰로 포워드되는 효과가 나타난다.
+		
 	}
 	@RequestMapping("/96.do")
 	public String study96Handle(Map map) {

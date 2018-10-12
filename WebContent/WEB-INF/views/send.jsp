@@ -30,7 +30,7 @@
 			xhr.send(JSON.stringify(param));
 		}	
 		
-	var send2 = function() {
+/* 	var send2 = function() {
 			var xhr = new XMLHttpRequest();
 			xhr.open("post", "${pageContext.servletContext.contextPath}/study/13ajax.do", true);
 			var param = "talker=saan";
@@ -38,7 +38,7 @@
 			param += "&ment=ajax의 Post요청은 send시 문자열을 데이터를 설정해서 전송";
 			xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
 			xhr.send(JSON.stringify(param));
-		}
+		} */
 	
 	
 	</script>
